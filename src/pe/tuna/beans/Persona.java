@@ -1,14 +1,28 @@
 package pe.tuna.beans;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotBlank;
+
 public class Persona {
 	private int id;
+	
+	@NotBlank
+	@NotNull 
 	private String nombre;
+	
+	@NotBlank
+	@NotNull
 	private String correo;
+	
+	@Min(18)
 	private int edad;
+	private int pais;
 
 	public Persona() {
 	}
-	
+
 	public Persona(String nombre, String correo, int edad) {
 		this.nombre = nombre;
 		this.correo = correo;
@@ -46,5 +60,14 @@ public class Persona {
 	public void setEdad(int edad) {
 		this.edad = edad;
 	}
+
+	public int getPais() {
+		return pais;
+	}
+
+	public void setPais(int pais) {
+		this.pais = pais;
+	}
+	
 
 }

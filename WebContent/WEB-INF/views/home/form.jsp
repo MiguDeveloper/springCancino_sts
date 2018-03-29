@@ -23,20 +23,31 @@
 		<div class="row">
 			<div class="col-md-4">
 				<form:form modelAttribute="persona">
+					<form:errors path="*" element="div" cssClass="alert alert-danger"></form:errors>
+					
 					<p>
 						<form:label path="nombre">Nombre</form:label>
-						<form:input path="nombre"/>
+						<form:input cssClass="form-control" path="nombre"/>
+						<form:errors path="nombre" cssClass="text-danger"></form:errors>
 					</p>
 					<p>
 						<form:label path="correo">Correo</form:label>
-						<form:input path="correo"/>
+						<form:input cssClass="form-control" path="correo"/>
+						<form:errors path="correo" cssClass="text-danger"></form:errors>
 					</p>
 					<p>
 						<form:label path="edad">Edad</form:label>
-						<form:input path="edad"/>
+						<form:input cssClass="form-control" path="edad"/>
+						<form:errors path="edad" cssClass="text-danger"></form:errors>
 					</p>
-					
-					<form:button>Enviar</form:button>
+					<p>
+						<form:label path="pais">Pais</form:label>
+						<form:select path="pais" cssClass="form-control">
+							<form:option value="0">Seleccione...</form:option>
+							<form:options items="${lstPaises}"/>
+						</form:select>
+					</p>
+					<button type="submit" class="btn btn-success">Enviar</button>
 				</form:form>
 			</div>
 		</div>
